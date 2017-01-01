@@ -20,7 +20,7 @@ with open("commented.txt", "r+") as log:
             limit=1000) if comment.id not in log.read())
 
         for comment in new_comments:
-            for word in words['words']:
+            for word in words:
                 if re.search("!{0}".format(word), comment.body, flags=re.IGNORECASE):
                     comment.reply("**{0}**\n\n{1}\n\n{2}\n\n{3}".format(
                         words[word]['name'],
